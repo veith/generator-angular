@@ -195,7 +195,7 @@ module.exports = function (grunt) {
                 reporters: ['mocha', 'coverage'],
                 preprocessors: {
                     //location of templates
-                    '/directives/**/*.html': 'html2js',
+                    '**/directive/**/*.html': 'html2js',
                     '**/!(*-spec).js': 'coverage'
 
 
