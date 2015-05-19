@@ -1,4 +1,4 @@
-describe('<%= ctrlname %>', function() {
+describe('<%= appname %>_<%= ctrlname %>', function() {
 
     beforeEach(module('<%= appname %>'));
 
@@ -6,7 +6,7 @@ describe('<%= ctrlname %>', function() {
 
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
-      ctrl = $controller('<%= ctrlname %>', {$scope: scope});
+      ctrl = $controller('<%= appname %>_<%= ctrlname %>', {$scope: scope});
     }));
 
     it('should ...', inject(function() {
