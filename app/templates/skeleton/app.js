@@ -1,9 +1,10 @@
-angular.module('<%= _.camelize(appname) %>', ['ui.bootstrap','ui.utils','<%= routerModuleName %>','ngAnimate']);
+angular.module('<%= _.camelize(appname) %>', ['<%= routerModuleName %>','core']);
 <% if (!uirouter) { %>
 angular.module('<%= _.camelize(appname) %>').config(function($routeProvider) {
-
+    $routeProvider.when('/',{templateUrl: 'partial/home/home.html'});
+    $routeProvider.when('/search',{templateUrl: 'partial/search/search.html'});
     /* Add New Routes Above */
-    $routeProvider.otherwise({redirectTo:'/home'});
+    $routeProvider.otherwise({redirectTo:'/'});
 
 });
 <% } %><% if (uirouter) { %>

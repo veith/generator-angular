@@ -1,7 +1,7 @@
 /*jshint latedef: nofunc */
 (function () {
     'use strict';
-    angular.module('generatortest').controller('generatortest_SearchCtrl', search);
+    angular.module('<%= _.camelize(appname) %>').controller('<%= _.camelize(appname) %>_SearchCtrl', search);
 
     function search($scope) {
         /* jshint validthis: true */

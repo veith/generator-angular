@@ -1,18 +1,18 @@
-describe('generatortest_SearchCtrl', function() {
+describe('<%= _.camelize(appname) %>_SearchCtrl', function() {
 
-    beforeEach(module('generatortest'));
+    beforeEach(module('<%= _.camelize(appname) %>'));
 
     var scope,ctrl;
 
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
-      ctrl = $controller('generatortest_SearchCtrl', {$scope: scope});
+      ctrl = $controller('<%= _.camelize(appname) %>_SearchCtrl', {$scope: scope});
     }));
 
     it('should ...', inject(function() {
 
         expect(1).toEqual(1);
-        
+
     }));
 
 });

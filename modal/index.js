@@ -30,13 +30,14 @@ ModalGenerator.prototype.askFor = function askFor() {
             this.name = props.name;
         }
         cgUtils.askForModuleAndDir('modal',this,true,cb);
-    }.bind(this)); 
+    }.bind(this));
 
 };
 
 ModalGenerator.prototype.files = function files() {
 
     this.ctrlname = _.camelize(_.classify(this.name)) + 'Ctrl';
+
 
     cgUtils.processTemplates(this.name,this.dir,'modal',this,null,null,this.module);
 

@@ -1,18 +1,18 @@
-describe('<%= _.camelize(appname) %>_HomeCtrl', function() {
+describe('core_SidenavrightCtrl', function() {
 
-    beforeEach(module('<%= _.camelize(appname) %>'));
+    beforeEach(module('core'));
 
     var scope,ctrl;
 
     beforeEach(inject(function($rootScope, $controller) {
       scope = $rootScope.$new();
-      ctrl = $controller('<%= _.camelize(appname) %>_HomeCtrl', {$scope: scope});
+      ctrl = $controller('core_SidenavrightCtrl', {$scope: scope});
     }));
 
     it('should ...', inject(function() {
 
         expect(1).toEqual(1);
-
+        
     }));
 
 });

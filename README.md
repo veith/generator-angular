@@ -77,7 +77,7 @@ To create a project:
 
     mkdir MyNewAwesomeApp
     cd MyNewAwesomeApp
-    yo ang
+    yo wbc
 
 Grunt Tasks
 -------------

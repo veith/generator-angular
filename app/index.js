@@ -13,6 +13,7 @@ var CgangularGenerator = module.exports = function CgangularGenerator(args, opti
         this.config.set('directiveDirectory','directive/');
         this.config.set('filterDirectory','filter/');
         this.config.set('serviceDirectory','service/');
+        this.config.set('dataserviceDirectory','dataservice/');
         var inject = {
             js: {
                 file: 'index.html',
@@ -27,6 +28,7 @@ var CgangularGenerator = module.exports = function CgangularGenerator(args, opti
             }
         };
         this.config.set('inject',inject);
+        this.config.set('modules',[{"name": "core", "file": "core/core.js"}]);
         this.config.save();
         this.installDependencies({ skipInstall: options['skip-install'] });
     });
@@ -65,12 +67,12 @@ CgangularGenerator.prototype.askForUiRouter = function askFor() {
     this.prompt(prompts, function (props) {
         if (props.router === 'Angular UI Router') {
             this.uirouter = true;
-            this.routerJs = 'bower_components/angular-ui-router/release/angular-ui-router.js';
+            this.routerJs = 'node_modules/angular-ui-router/release/angular-ui-router.js';
             this.routerModuleName = 'ui.router';
             this.routerViewDirective = 'ui-view';
         } else {
             this.uirouter = false;
-            this.routerJs = 'bower_components/angular-route/angular-route.js';
+            this.routerJs = 'node_modules/angular-route/angular-route.js';
             this.routerModuleName = 'ngRoute';
             this.routerViewDirective = 'ng-view';
         }

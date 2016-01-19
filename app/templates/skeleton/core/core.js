@@ -1,11 +1,13 @@
-(function() {
-    angular.module('core', []);
+(function () {
+    angular.module('core', ['ngMaterial']);
 
-        angular.module('core').config(function ($routeProvider) {
+    angular.module('core').config(function ($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .primaryPalette('indigo')
+            .accentPalette('pink')
+            .warnPalette('deep-orange')
+            .backgroundPalette('grey');
+    });
 
-            $routeProvider.when('/',{templateUrl: 'core/partial/yps/yps.html'});
-            /* Add New Routes Above */
-
-        });
 
 })();

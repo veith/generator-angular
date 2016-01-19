@@ -1,45 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title><%= _.camelize(appname) %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="<%= _.camelize(appname) %>">
+    <meta name="viewport" content="initial-scale=1" />
+    <link rel="stylesheet" href="node_modules/adcubum-material/angular-material.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href="app.less" type="text/css" rel="stylesheet/less">
+
 </head>
-<body>
+<body layout="column">
 
 <!-- Livereload script for development only (stripped during dist build) -->
 <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
 
-<!-- JS from Bower Components -->
-<script src="bower_components/less.js/dist/less.js" data-concat="false"></script>
-<script src="bower_components/jquery/jquery.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-<script src="bower_components/underscore/underscore.js"></script>
-<script src="bower_components/moment/moment.js"></script>
-<script src="bower_components/angular/angular.js"></script>
+<!-- JS from node modules -->
+
+<script src="node_modules/less/dist/less.js" data-concat="false"></script>
+<script src="node_modules/underscore/underscore.js"></script>
+<script src="node_modules/moment/moment.js"></script>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/adcubum-material/angular-material.js"></script>
+<script src="node_modules/angular-cookies/angular-cookies.js"></script>
+<script src="node_modules/angular-animate/angular-animate.js"></script>
+<script src="node_modules/angular-aria/angular-aria.js"></script>
 <script src="<%= routerJs %>"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-<script src="bower_components/angular-ui-utils/ui-utils.js"></script>
-<!-- Add New Bower Component JS Above -->
+
+<!-- Add New modules JS Above -->
 
 
 <!-- Main App JS -->
 <script src="app.js"></script>
+<script src="core/core.js"></script>
+<script src="core/service/logger.js"></script>
+<script src="core/iconset/iconset.js"></script>
+<script src="core/service/sidenav.js"></script>
+<script src="core/dataservice/menu.js"></script>
+<script src="core/partial/sidenavLeft/sidenavLeft.js"></script>
+<script src="core/partial/sidenavRight/sidenavRight.js"></script>
+<script src="core/partial/toolbar/toolbar.js"></script>
+<script src="partial/home/home.js"></script>
+<script src="partial/search/search.js"></script>
+
 <!-- Add New Component JS Above -->
 
-<div>
-    <div id="content" class="container">
+
+<ng-include src="'core/partial/toolbar/toolbar.html'"></ng-include>
+<div flex layout="row">
+
+    <ng-include src="'core/partial/sidenavLeft/sidenavLeft.html'" layout="row"></ng-include>
+
+    <div id="content" flex="">
         <div class="row">
-            <div
-            <%= routerViewDirective %>>
+            <div <%= routerViewDirective %> layout-padding="">
+            </div>
+
         </div>
+
     </div>
+    <ng-include src="'core/partial/sidenavRight/sidenavRight.html'" layout="row"></ng-include>
+
 </div>
-</div>
+
 </body>
+
 <script data-remove="false">
     angular.bootstrap(document, ['<%= _.camelize(appname) %>']);
 </script>

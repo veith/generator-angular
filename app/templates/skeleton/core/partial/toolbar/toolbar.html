@@ -1,0 +1,25 @@
+<md-toolbar class="par-toolbar" ng-controller="core_ToolbarCtrl as toolbar">
+    <div class="md-toolbar-tools" layout="row">
+        <section flex="25">
+            <md-button hide-gt-md  class="md-icon-button" aria-label="Settings" ng-click="toolbar.toggleSidenavLeft()">
+                <md-icon md-svg-icon="navigation:menu"></md-icon>
+            </md-button>
+        </section>
+        <section flex="35" flex-gt-sm="50">
+            <div class="srch" layout="row">
+                <md-icon md-svg-icon="action:search" class=""></md-icon>
+                <div flex=""><input spellcheck="false" type="text" ng-model="term" ng-change="search()" aria-label="search" placeholder="search"></div>
+
+            </div>
+        </section>
+        <span flex></span>
+        <section>
+            <md-button class="md-icon-button" aria-label="Favorite">
+                <md-icon md-svg-icon="action:dash"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="More" ng-click="toolbar.enableSidenavRight()">
+                <md-icon md-svg-icon="navigation:more"></md-icon>
+            </md-button>
+        </section>
+    </div>
+</md-toolbar>
