@@ -1,0 +1,17 @@
+[
+    {
+        "link": "/marco",
+        "title": "Dashboard",
+        "icon": "action:dash"
+    },
+    {
+        "link": "",
+        "title": "Friends",
+        "icon": "navigation:forward"
+    },
+    {
+        "link": "",
+        "title": "Messages",
+        "icon": "action:NotOK"
+    }
+]
